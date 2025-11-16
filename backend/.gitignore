@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+.npm
+
+# environment variables
+.env
+.env*.local
+
+# Prisma generated client 
+/prisma/client/
+
+# Build output 
+/dist/
+/build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+
+/src/generated/prisma
