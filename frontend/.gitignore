@@ -1,0 +1,10 @@
+# (als je hier Thumbnails genereert)
+# Voor macOS
+.DS_Store
+# Voor windows
+Thumbs.db
+
+# Indien de frontend later node_modules of een build map krijgt
+# node_modules/
+# dist/
+# build/
