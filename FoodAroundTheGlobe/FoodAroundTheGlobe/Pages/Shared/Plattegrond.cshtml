@@ -1,0 +1,30 @@
+﻿@page
+@model FoodAroundTheGlobe.Pages.Shared.PlattegrondModel
+@{
+}
+    ViewData["Title"] = "Interactieve plattegrond";
+}
+<h1>@ViewData["Title"]</h1>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet="https://unpkg.com/leaflet/dist/leaflet
+<div id="map" style="height: 600px;"></div>
+
+<script>
+    var map = L.map('map').setView([51.4416, 5.4697], 15); // Eindhoven voorbeeld
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Voorbeeld marker
+    var marker = L.marker([51.4416, 5.4697]).addTo(map)
+        .bindPopup('<b>Foodstand 1</b><br>Sushi & Drinks');
+</script>
+
+<script>
+    var foodStands = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.FoodStands));
+    foodStands.forEach(function(stand) {
+        L.marker([stand.Latitude, stand.Longitude]).addTo(map)
+            .bindPopup('<b>' + stand.Naam + '</b><br>' + stand.Beschrijving);
+    });
+</script>

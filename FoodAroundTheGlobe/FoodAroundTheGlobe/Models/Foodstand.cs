@@ -1,0 +1,12 @@
+﻿namespace FoodAroundTheGlobe.Models
+{
+    public class FoodStand
+    {
+        public int Id { get; set; }
+        public string Naam { get; set; }
+        public string Beschrijving { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+    }
+}
+

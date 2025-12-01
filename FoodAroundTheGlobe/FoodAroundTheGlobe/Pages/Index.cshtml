@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Welkom bij FoodFestival Companion";
+}
+
+<div class="welcome-container">
+    <h1>Welkom bij Food Around The Globe</h1>
+    <p>Jouw festival companion voor een onvergetelijke culinaire ervaring!</p>
+    <p>Log in of registreer om toegang te krijgen tot workshops en de interactieve plattegrond.</p>
+    <div class="buttons">
+        <a class="btn btn-primary" asp-page="/Account/Login">Inloggen</a>
+        <a class="btn btn-secondary" asp-page="/Account/Register">Registreren</a>
+    </div>
+</div>
+
+<main>
+    <section id="users-section">
+        <h2>Lijst van gebruikers</h2>
+        <h2>Hallo!</h2>
+        <ul id="user-list"></ul>
+        <h3>Nieuwe gebruiker toevoegen</h3>
+        <form id="add-user-form">
+            <input type="text" id="userName" placeholder="Naam" required>
+            <input type="email" id="userEmail" placeholder="E-mail" required>
+            <button type="submit">Toevoegen</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Food Around The Globe Team</p>
+</footer>
