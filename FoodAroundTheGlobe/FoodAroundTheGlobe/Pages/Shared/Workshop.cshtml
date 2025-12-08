@@ -8,6 +8,6 @@ ViewData["Title"] = "Workshop";
 <ul>
 @foreach (var w in Model.Workshops)
 {
-    <li>@w.Titel - @w.Datum.ToShortDateString()</li>
+    <li>@w.Title - @w.Date.ToShortDateString()</li>
 }
 </ul>
