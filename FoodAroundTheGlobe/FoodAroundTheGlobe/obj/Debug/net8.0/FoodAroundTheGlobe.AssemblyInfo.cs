@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FoodAroundTheGlobe")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a397422acdeba729c69d9340243229a2bad51a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5224cca39d216124c2f3e0343f599bce63078d08")]
 [assembly: System.Reflection.AssemblyProductAttribute("FoodAroundTheGlobe")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FoodAroundTheGlobe")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
