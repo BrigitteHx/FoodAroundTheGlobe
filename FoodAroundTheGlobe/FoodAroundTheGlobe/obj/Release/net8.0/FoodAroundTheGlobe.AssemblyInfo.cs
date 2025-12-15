@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("8c8f28fc-2d72-489b-b65e-00c37a0bcf76")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("FoodAroundTheGlobe")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a397422acdeba729c69d9340243229a2bad51a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("FoodAroundTheGlobe")]
