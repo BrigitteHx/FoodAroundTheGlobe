@@ -9211,11 +9211,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\brigi\\Documents\\A - HBO-ICT Bachelor\\SEM 1\\challenge 2\\ProductOmgeving2\\FoodAroundTheGlobe\\FoodAroundTheGlobe\\FoodAroundTheGlobe.csproj",
+      "projectUniqueName": "C:\\Users\\brigi\\Documents\\A - HBO-ICT Bachelor\\SEM 1\\challenge 2\\OntwikkelOmgeving\\FoodAroundTheGlobe\\FoodAroundTheGlobe\\FoodAroundTheGlobe.csproj",
       "projectName": "FoodAroundTheGlobe",
-      "projectPath": "C:\\Users\\brigi\\Documents\\A - HBO-ICT Bachelor\\SEM 1\\challenge 2\\ProductOmgeving2\\FoodAroundTheGlobe\\FoodAroundTheGlobe\\FoodAroundTheGlobe.csproj",
+      "projectPath": "C:\\Users\\brigi\\Documents\\A - HBO-ICT Bachelor\\SEM 1\\challenge 2\\OntwikkelOmgeving\\FoodAroundTheGlobe\\FoodAroundTheGlobe\\FoodAroundTheGlobe.csproj",
       "packagesPath": "C:\\Users\\brigi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\brigi\\Documents\\A - HBO-ICT Bachelor\\SEM 1\\challenge 2\\ProductOmgeving2\\FoodAroundTheGlobe\\FoodAroundTheGlobe\\obj\\",
+      "outputPath": "C:\\Users\\brigi\\Documents\\A - HBO-ICT Bachelor\\SEM 1\\challenge 2\\OntwikkelOmgeving\\FoodAroundTheGlobe\\FoodAroundTheGlobe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
