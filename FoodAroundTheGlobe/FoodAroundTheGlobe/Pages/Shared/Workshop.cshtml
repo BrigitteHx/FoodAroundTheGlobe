@@ -2,12 +2,12 @@
 @model WorkshopPageModel    
 @{
 }
-ViewData["Title"] = "Workshop";
+ViewData["Title"] = "Workshops";
 }
 <h1>@ViewData["Title"]</h1>
 <ul>
 @foreach (var w in Model.Workshops)
 {
-    <li>@w.Title - @w.Date.ToShortDateString()</li>
+    <li>@w.NameWs - @w.Date.ToShortDateString()</li>
 }
 </ul>

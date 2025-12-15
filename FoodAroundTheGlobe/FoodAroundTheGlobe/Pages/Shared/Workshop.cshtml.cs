@@ -5,7 +5,7 @@ using FoodAroundTheGlobe.Models;
 public class WorkshopPageModel : PageModel
 {
     private readonly ApplicationDbContext _context;
-    public List<Workshop> Workshops { get; set; }
+    public List<Workshops> Workshops { get; set; }
 
     public WorkshopPageModel(ApplicationDbContext context)
     {

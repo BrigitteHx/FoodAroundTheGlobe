@@ -10,7 +10,7 @@ namespace FoodAroundTheGlobe.Pages.Shared
     public class PlattegrondModel : PageModel
     {
     private readonly ApplicationDbContext _context;
-    public List<FoodStand> FoodStands { get; set; }
+    public List<FoodStands> FoodStands { get; set; }
 
     public PlattegrondModel(ApplicationDbContext context)
     {
