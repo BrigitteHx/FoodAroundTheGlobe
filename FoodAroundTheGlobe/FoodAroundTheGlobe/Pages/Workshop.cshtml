@@ -1,0 +1,13 @@
+﻿@page
+@model WorkshopPageModel    
+@{
+}
+ViewData["Title"] = "Workshops";
+}
+<h1>@ViewData["Title"]</h1>
+<ul>
+@foreach (var w in Model.Workshops)
+{
+    <li>@w.NameWs - @w.Date.ToShortDateString()</li>
+}
+</ul>
