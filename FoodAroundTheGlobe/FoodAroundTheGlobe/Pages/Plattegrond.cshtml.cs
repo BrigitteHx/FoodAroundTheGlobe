@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using FoodAroundTheGlobe.Data;
 using FoodAroundTheGlobe.Models;
 
-namespace FoodAroundTheGlobe.Pages.Shared
+namespace FoodAroundTheGlobe.Pages
 {
     
     public class PlattegrondModel : PageModel
@@ -17,12 +17,12 @@ namespace FoodAroundTheGlobe.Pages.Shared
         _context = context;
     }
 
-    public void OnGet()
-    {
-        FoodStands = _context.FoodStands.ToList();
+        public void OnGet()
+        {
         }
-
     }
 }
+
+// Compare this snippet from FoodAroundTheGlobe/Pages/Index.cshtml.cs:
 
 

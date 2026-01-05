@@ -56,8 +56,9 @@ namespace FoodAroundTheGlobe.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Naam = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Beschrijving = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NameFs = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Cuisinetype = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DescriptionFs = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Latitude = table.Column<double>(type: "float", nullable: false),
                     Longitude = table.Column<double>(type: "float", nullable: false)
                 },
@@ -72,10 +73,12 @@ namespace FoodAroundTheGlobe.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Titel = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Beschrijving = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Datum = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MaxAantalDeelnemers = table.Column<int>(type: "int", nullable: false)
+                    NameWs = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DescriptionWs = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    MaxParticipants = table.Column<int>(type: "int", nullable: false),
+                    Latitude = table.Column<double>(type: "float", nullable: false),
+                    Longitude = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
