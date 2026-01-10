@@ -19,10 +19,8 @@ namespace FoodAroundTheGlobe.Pages
         {
             if (!ModelState.IsValid)
             {
-                return Page(); // Toon validatiefouten
             }
 
-            // Hier kun je e-mail verzenden of opslaan in DB
             IsSubmitted = true;
 
             return Page();

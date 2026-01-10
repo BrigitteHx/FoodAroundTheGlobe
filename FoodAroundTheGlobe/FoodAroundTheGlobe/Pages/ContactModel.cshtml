@@ -1,10 +1,9 @@
 ﻿@page
-@model FoodAroundTheGlobe.Pages.ContactModel
+@model ContactModel
 @{
     ViewData["Title"] = "Contact";
 }
 <h1>@ViewData["Title"]</h1>
-
 <p>Heb je vragen of opmerkingen? Neem gerust contact met ons op via onderstaand formulier.</p>
 
 @if (Model.IsSubmitted)
@@ -15,7 +14,7 @@
 }
 else
 {
-    <form method="post">
+    <form method="post" novalidate>
         <div class="mb-3">
             <label asp-for="ContactForm.Name" class="form-label"></label>
             <input asp-for="ContactForm.Name" class="form-control" />
@@ -30,7 +29,7 @@ else
 
         <div class="mb-3">
             <label asp-for="ContactForm.Message" class="form-label"></label>
-            <textarea asp-for="ContactForm.Message" class="form-control"></textarea>
+            <textarea asp-for="ContactForm.Message" class="form-control" rows="5"></textarea>
             <span asp-validation-for="ContactForm.Message" class="text-danger"></span>
         </div>
 
@@ -38,4 +37,6 @@ else
     </form>
 }
 
-
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="~/FoodAroundTheGlobe.styles.css" asp-append-version="true" />
 </head>
 <body>
+
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -26,16 +28,17 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Agenda">Agenda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Plattegrond">Plattegrond</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/PlattegrondModel">Plattegrond</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Workshop">Workshop</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/WorkshopModel">Workshop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/ContactModel">Contact</a>
                         </li>
-                        
+
                     </ul>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
@@ -48,7 +51,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2025 - FoodAroundTheGlobe - All Rights Reserved <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2026 - FoodAroundTheGlobe - All Rights Reserved <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
