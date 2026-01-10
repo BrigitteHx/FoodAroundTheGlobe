@@ -12,5 +12,3 @@ namespace FoodAroundTheGlobe.Models
         public int MaxParticipants { get; set; }
     }
 }
-
-

@@ -19,9 +19,7 @@ namespace FoodAroundTheGlobe.Pages
         {
             if (!ModelState.IsValid)
             {
-                return Page();
             }
-
 
             IsSubmitted = true;
 
