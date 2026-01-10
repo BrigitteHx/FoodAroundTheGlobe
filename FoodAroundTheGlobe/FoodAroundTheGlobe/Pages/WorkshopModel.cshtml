@@ -1,0 +1,63 @@
+﻿@page 
+@model WorkshopModel
+@{
+    ViewData["Title"] = "Workshops";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+@if (Model.Workshops == null || !Model.Workshops.Any())
+{
+    <p>Er zijn momenteel geen workshops beschikbaar.</p>
+}
+else
+{
+    <ul class="list-unstyled">
+        @foreach (var w in Model.Workshops)
+        {
+            var remaining = Model.RemainingSlotsPerWorkshop.ContainsKey(w.Id)
+            ? Model.RemainingSlotsPerWorkshop[w.Id] : int.MaxValue;
+            var isSuccess = Model.SuccessForWorkshopId == w.Id;
+
+
+            <li class="workshop-item border rounded p-3 mb-3">
+                <div class="ws-name text-truncate">
+                    @w.NameWs
+                    @if (remaining <= 0)
+                    {
+                        <span class="badge bg-warning text-dark ms-2">VOL</span>
+                    }
+                </div>
+
+                <div class="ws-datetime">
+                    <strong>@w.Date.ToString("HH:mm")</strong>
+                    <span class="text-muted">@w.Date.ToString(" dd-MM-yyyy")</span>
+                </div>
+
+                <div class="ws-action text-end">
+                    @if (remaining > 0)
+                    {
+                        <form method="post" asp-page-handler="Register" asp-route-workshopId="@w.Id" class="d-inline">
+                            <button type="submit" class="btn btn-primary btn-sm">Aanmelden</button>
+                        </form>
+                    }
+                </div>
+
+                @if (isSuccess)
+                {
+                    <div class="alert alert-success mt-3 mb-0 grid-full">
+                        Je aanmelding voor <strong>@w.NameWs</strong> is succesvol!
+                    </div>
+                }
+            </li>
+        }
+    </ul>
+}
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

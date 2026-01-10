@@ -11,9 +11,10 @@ namespace FoodAroundTheGlobe.Data
         {
         }
 
-        public DbSet<FoodStand> FoodStands { get; set; }
+        public DbSet<FoodStands> FoodStands { get; set; }
+        public DbSet<Workshops> Workshops { get; set; } = default!;
+        public DbSet<WorkshopRegistrations> WorkshopRegistrations { get; set; } = default!;
 
-        public DbSet<Workshop> Workshops { get; set; }
 
     }
 }

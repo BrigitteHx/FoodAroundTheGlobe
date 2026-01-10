@@ -1,0 +1,41 @@
+﻿@page
+@model ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.IsSubmitted)
+{
+    <div class="alert alert-success">
+        Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.
+    </div>
+}
+else
+{
+    <form method="post" novalidate>
+        <div class="mb-3">
+            <label asp-for="ContactForm.Name" class="form-label"></label>
+            <input asp-for="ContactForm.Name" class="form-control" />
+            <span asp-validation-for="ContactForm.Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ContactForm.Email" class="form-label"></label>
+            <input asp-for="ContactForm.Email" class="form-control" />
+            <span asp-validation-for="ContactForm.Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ContactForm.Message" class="form-label"></label>
+            <textarea asp-for="ContactForm.Message" class="form-control" rows="5"></textarea>
+            <span asp-validation-for="ContactForm.Message" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Verzenden</button>
+    </form>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
