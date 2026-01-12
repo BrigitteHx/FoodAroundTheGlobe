@@ -3,7 +3,7 @@ html {
     font-size: 14px;
     position: relative;
     min-height: 100%;
-    background-color: #678c7a;
+    background-color: lightgreen;
 }
 
 @media (min-width: 768px) {
@@ -14,12 +14,12 @@ html {
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-    background-color: #0a8a4c
+    background-color: #0a8a4c;
 }
 
 body {
     margin-bottom: 60px;
-    background-color: #d6e1e1;
+    background-color: lightgreen;
 }
 
 .welcome-container {
@@ -29,7 +29,7 @@ body {
 
 .buttons .btn {
     margin: 10px;
-    padding: 10px 20px;
+    padding: 10px 30px;
     font-size: 18px;
 }
 
@@ -63,3 +63,223 @@ body {
             text-align: left;
         }
 }
+
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.map-button {
+    position: absolute;
+    background: rgba(255,255,255,0.85);
+    border: 2px solid #444;
+    padding: 6px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+}
+
+    .map-button:hover {
+        background: #ffdd66;
+    }
+
+        /* Tooltip */
+        .map-button:hover::after {
+            content: attr(data-description);
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 6px;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            z-index: 10;
+        }
+
+/* MODAL */
+.modal.hidden {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+}
+
+.modal-window {
+    position: relative;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    z-index: 2;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+    border: 1px solid rgba(0,0,0,.06);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #eee;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+    .map-button:hover {
+        background: #ffdd66;
+    }
+
+        .map-button:hover::after {
+            content: attr(data-description);
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+/* Container en afbeelding */
+.map {
+    position: relative; /* belangrijk! referentie voor absolute kinderen */
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.map__img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Hotspots (klikgebieden op de afbeelding) */
+.hotspot {
+    position: absolute;
+    transition: transform .15s ease, box-shadow .2s ease, outline-color .2s ease;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* boven de afbeelding */
+    cursor: pointer;
+    /* Productiestand: onzichtbaar maar klikbaar */
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: transparent; /* label onzichtbaar */
+    outline: none;
+}
+
+/* Debug-stand: maak hotspots zichtbaar om uit te lijnen */
+.map[data-debug="true"] .hotspot {
+    color: #111;
+    background: rgba(255, 221, 102, .9);
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+
+    /* Optionele tooltip in debug */
+    .map[data-debug="true"] .hotspot::after {
+        content: attr(data-title);
+        position: absolute;
+        top: -1.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: #fff;
+        padding: .25rem .5rem;
+        border-radius: 6px;
+        font-size: .85rem;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .15s ease;
+    }
+
+    .map[data-debug="true"] .hotspot:hover::after {
+        opacity: 1;
+    }
+
+
+
+.navbar .brand-logo {
+    height: 40px; 
+    width: auto;
+    display: block;
+}
+
+
+.navbar .nav-link {
+    font-weight: 500; 
+    color: #222; 
+    padding: .5rem .75rem; 
+}
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus {
+        color: #0a8a4c; 
+        text-decoration: none;
+    }
+
+    .navbar .nav-link.active,
+    .navbar .nav-link.active:focus,
+    .navbar .nav-link.active:hover {
+        font-weight: 500; 
+        color: #0a8a4c;
+    }
+
+
+.navbar-nav.mx-auto {
+    text-align: center; 
+}
+
+
+.navbar {
+    background-color: #ffffff; 
+}
+
+
+
+.contact-wrapper {
+    max-width: 500px; 
+    margin: 20px auto; 
+    padding: 20px 15px;
+}
+
+    .contact-wrapper form {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+
+

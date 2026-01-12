@@ -1,10 +1,137 @@
 ﻿@page
 @model PlattegrondModel
 @{
-    ViewData["Title"] = "Interactieve plattegrond";
+    ViewData["Title"] = "Plattegrond";
 }
+
 <h1>@ViewData["Title"]</h1>
+<p>Bekijk hieronder de plattegrond van het festivalterrein. Klik op de labels voor meer informatie over de foodstand of de workshop. </p>
 
-<p>Bekijk hieronder de interactieve plattegrond van het festivalterrein. Klik op de markers om meer informatie te krijgen over de verschillende foodstands, workshops en hun specialiteiten.</p>
+<style>
+    /* Alle padding van de bootstrap container uitschakelen
+       zodat je kaart *echt* in het midden komt */
+    .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 1000px !important;  /* zelfde breedte als je .map */
+    }
 
-<img src="~/images/plattegrond.jpg" alt="Interactieve plattegrond van Food Around The Globe" usemap="#plattegrondmap" style="max-width:100%; height:auto;" />
+    main.pb-3 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+</style>
+
+
+    <div class="map" data-debug="False">
+    <img src="~/images/plattegrond.jpg" alt="Plattegrond" />
+
+    <button class="hotspot" style="top:21%; left:34%; width: 140px;"
+            aria-label="Vegan"
+            data-title="Vegan"
+            data-description="Hier vind je heerlijke plantaardige gerechten, lokale producten en vegan specials.">
+        Vegan
+    </button>
+    <button class="hotspot" style="top:32%; left:26%; width: 140px;"
+            aria-label="Kookworkshop Vegan"
+            data-title="Kookworkshop Vegan"
+            data-description="Leer om de lekkerste vegan gerechten te maken.">
+        Vegan
+    </button>
+
+    <button class="hotspot" style="top:7%; left:73%; width: 150px;"
+            aria-label="Aziatisch"
+            data-title="Aziatisch"
+            data-description="Aziatische foodstands met sushi, wok, noodles en authentieke streetfood smaken.">
+        Aziatisch
+    </button>
+    <button class="hotspot" style="top:18%; left:62%; width: 150px;"
+            aria-label="Kookworkshop Aziatisch"
+            data-title="Kookworkshop Aziatisch"
+            data-description="Samen maken we de lekkerste sushi, noodles of wokgerechten.">
+        Aziatisch
+    </button>
+
+    <button class="hotspot" style="top:14%; left:114%; width: 150px;"
+            aria-label="Europees"
+            data-title="Europees"
+            data-description="Traditionele gerechten uit verschillende Europese landen zoals pasta, Franse gerechten en meer.">
+        Europees
+    </button>
+     <button class="hotspot" style="top:26%; left:104%; width: 150px;"
+            aria-label="Kookworkshop Europees"
+            data-title="Kookworkshop Europees"
+            data-description="De Franse, Italiaanse en Zwitsere keuken leer je hier kennen.">
+        Europees
+    </button>
+
+    <button class="hotspot" style="top:37%; left:76%; width: 160px;"
+            aria-label="Streetfood"
+            data-title="Streetfood"
+            data-description="Snel, warm, vers en wereldse streetfood klassiekers – burgers, snacks en meer.">
+        Streetfood
+    </button>
+     <button class="hotspot" style="top:50%; left:62%; width: 160px;"
+            aria-label="Kookworkshop Streetfood"
+            data-title="Kookworkshop Streetfood"
+            data-description="Snel iets lekkers op tafel kunnen zetten? Hier leer je makkelijke en snelle streetfood klassiekers te bereiden.">
+        Streetfood
+    </button>
+
+    <button class="hotspot" style="top:44%; left:122%; width: 170px;"
+            aria-label="Spaanse Tapas"
+            data-title="Spaanse Tapas"
+            data-description="Tapas, paella, Spaanse borrelhapjes en mediterrane delicatessen.">
+        Spaanse Tapas
+    </button>
+    <button class="hotspot" style="top:58%; left:109%; width: 170px;"
+            aria-label="Kookworkshop Spaanse Tapas"
+            data-title="Kookworkshop Spaanse Tapas"
+            data-description="Tapas, paella, Spaanse borrelhapjes en mediterrane delicatessen.">
+        Spaanse Tapas
+    </button>
+</div>
+
+<!-- Eén MODAL (geen dubbele IDs) -->
+<div id="modal" class="modal hidden" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-window">
+        <button class="close-btn" type="button" data-close aria-label="Sluiten">&times;</button>
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const modal = document.getElementById("modal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalDesc = document.getElementById("modal-desc");
+
+        // Klik op hotspot → modal openen
+        document.querySelectorAll(".hotspot").forEach(btn => {
+            btn.addEventListener("click", () => {
+                modalTitle.textContent = btn.dataset.title ?? "Foodstand";
+                modalDesc.textContent = btn.dataset.description ?? "";
+                modal.classList.remove("hidden");
+                modal.setAttribute("aria-hidden", "false");
+            });
+        });
+
+        // Sluiten (knop + backdrop + Escape)
+        document.querySelectorAll("[data-close]").forEach(el => {
+            el.addEventListener("click", () => {
+                modal.classList.add("hidden");
+                modal.setAttribute("aria-hidden", "true");
+            });
+        });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+                modal.classList.add("hidden");
+                modal.setAttribute("aria-hidden", "true");
+            }
+        });
+    </script>
+}
