@@ -1,15 +1,14 @@
 using FoodAroundTheGlobe.Data;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using FoodAroundTheGlobe.Models;
+using System.Linq;
 
 namespace FoodAroundTheGlobe.Pages
 {
-
     public class PlattegrondModel : PageModel
     {
         private readonly ApplicationDbContext _context;
-        public List<FoodStands> FoodStands { get; set; } = new List<FoodStands>();
+        public List<FoodStands> FoodStands { get; set; } = new();
 
         public PlattegrondModel(ApplicationDbContext context)
         {
@@ -18,6 +17,7 @@ namespace FoodAroundTheGlobe.Pages
 
         public void OnGet()
         {
+           
         }
     }
 }
