@@ -8,30 +8,18 @@
     <h1>Welkom bij Food Around The Globe</h1>
     <p>Jouw festival companion voor een onvergetelijke, culinaire ervaring!</p>
 
-    
-
-
-    @if (User.Identity?.IsAuthenticated ?? false)
-    {
-        <a class="btn btn-primary" asp-page="/Index">Ga naar Home</a>
-    }
-    else
-    {
-        <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Login">Inloggen</a>
-        <a class="btn btn-outline-secondary" asp-area="Identity" asp-page="/Account/Register">Registreren</a>
-    }
 </section>
 
 
 <style>
-    /* Alle padding van de bootstrap container uitschakelen
-           zodat je kaart *echt* in het midden komt */
+    
     .container {
         padding-left: 0 !important;
         padding-right: 0 !important;
         margin-left: auto !important;
         margin-right: auto !important;
         max-width: 1000px !important; /* zelfde breedte als je .map */
+       
     }
 
     main.pb-3 {
